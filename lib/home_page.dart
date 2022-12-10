@@ -18,7 +18,10 @@ class _HomePageState extends State<HomePage> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [Color(0xffFEE3BC), Color(0xffF39876)],
+          colors: [
+            Color(0xffFEE3BC),
+            Color(0xffF39876),
+          ],
         ),
       ),
       child: Scaffold(
