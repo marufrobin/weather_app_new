@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:weather_app_new/screen/building_body.dart';
 
 class HomePage extends StatefulWidget {
   String title;
@@ -14,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(8),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -41,6 +42,7 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ),
+        body: BuildingBody(),
       ),
     );
   }
