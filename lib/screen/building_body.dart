@@ -10,18 +10,8 @@ class BuildingBody extends StatefulWidget {
 }
 
 class _BuildingBodyState extends State<BuildingBody> {
-  String apiToken = "175cf6ab4459aa37983a566b55f6167f";
-
-  addData() async {
-    String url =
-        "https://api.openweathermap.org/data/2.5/weather?lat=37.4219983&lon=-122.084&units=metric&appid=$apiToken";
-    var resonpce = await Uri.parse(url);
-    print("Responce: ${resonpce}");
-  }
-
   @override
   void initState() {
-    addData();
     // TODO: implement initState
     super.initState();
   }
