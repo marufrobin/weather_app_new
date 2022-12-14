@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app_new/custom_http.dart';
 
 class BuildingBody extends StatefulWidget {
   const BuildingBody({
@@ -18,11 +19,21 @@ class _BuildingBodyState extends State<BuildingBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: double.infinity,
-      width: double.infinity,
-      color: Colors.cyan,
-      child: Text("Maruf Ahmed Robin"),
+    // final weatherList = ;
+    return FutureBuilder(
+      initialData: CustomHttp.fatchingData(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(child: CircularProgressIndicator());
+        } else if (snapshot.hasError) {
+          return Text("Somthing error");
+        } else if (snapshot.data == null) {
+          return Text("No Data found");
+        }
+        return Container(
+          child: Text("data::::${snapshot.data}"),
+        );
+      },
     );
   }
 }

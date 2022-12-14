@@ -4,8 +4,8 @@ import 'package:http/http.dart' as http;
 import 'package:weather_app_new/model/model.dart';
 
 class CustomHttp {
-  Future<List<Weather>> fatchingData() async {
-    List<Weather> weatherList = [];
+  static Future<List<Model>> fatchingData() async {
+    List<Model> weatherList = [];
     Model model;
 
     String apiToken = "175cf6ab4459aa37983a566b55f6167f";
@@ -17,6 +17,7 @@ class CustomHttp {
     var data = jsonDecode(resonpce.body);
     for (var i in data) {
       model = Model.fromJson(i);
+      weatherList.add(model);
     }
 
     print("Responce: ${resonpce.body}");
